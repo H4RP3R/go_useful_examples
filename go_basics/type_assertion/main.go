@@ -19,9 +19,17 @@ func (a Article) String() string {
 // 	// fmt.Printf("%+v\n", s.Title)
 // }
 
+// func typeCast(s fmt.Stringer) {
+// 	article, ok := s.(Article) // article == nil, if not ok
+// 	if ok {
+// 		fmt.Printf("%+v\n", article.Title)
+// 	} else {
+// 		fmt.Println("Invalid type assertion")
+// 	}
+// }
+
 func typeCast(s fmt.Stringer) {
-	article, ok := s.(Article) // article == nil, if not ok
-	if ok {
+	if article, ok := s.(Article); ok {
 		fmt.Printf("%+v\n", article.Title)
 	} else {
 		fmt.Println("Invalid type assertion")
